@@ -1,5 +1,5 @@
 class AddForeignKeyToPins < ActiveRecord::Migration
   def change
-    add_column :pins, :user_id, :integer
+    add_column :pins, :board_id, :integer
   end
 end

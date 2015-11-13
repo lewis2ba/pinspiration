@@ -15,3 +15,7 @@ pins = Pin.create([
   {title: "Pin 5", image_url: "http://www.fillmurray.com/200/305"},
   {title: "Pin 6", image_url: "http://www.fillmurray.com/200/305"},
 ])
+
+boards = Board.create([
+  {title: "board1", user_id: 1}
+  ])

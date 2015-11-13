@@ -8,6 +8,7 @@ class PinsController < ApplicationController
   def new
     authenticate_user!
     @pin = Pin.new
+    @board = Board.find(params[:board_id])
   end
 
   def show
@@ -15,8 +16,9 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = current_user.pins.create!(pin_params)
-    redirect_to pin_path(@pin)
+    @board = Board.find( params[:board_id] )
+    @pin = @board.pins.create(pin_params)
+    redirect_to boards_path
   end
 
   def edit
@@ -39,6 +41,6 @@ class PinsController < ApplicationController
 
   def pin_params
       params.require(:pin).permit(:title, :image_url)
-    end
+  end
 
 end

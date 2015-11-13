@@ -19,7 +19,6 @@ ActiveRecord::Schema.define(version: 20151113161903) do
   create_table "boards", force: :cascade do |t|
     t.string  "title"
     t.integer "user_id"
-    t.integer "pin_id"
   end
 
   create_table "pins", force: :cascade do |t|
