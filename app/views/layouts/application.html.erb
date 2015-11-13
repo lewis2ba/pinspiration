@@ -7,7 +7,12 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<header>
+  <nav>
+    <a href="/pins">Pins</a>
+    <%= link_to "Create new pin", new_pin_path %>
+  </nav>
+</header>
 <%= yield %>
 
 </body>

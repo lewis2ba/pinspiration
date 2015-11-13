@@ -1,0 +1,5 @@
+<h2>Edit Pin</h2>
+<%= render partial: "form" %>
+<%= form_for @pin, method: :delete do |f| %>
+  <%= f.submit "Delete", class: "delete" %>
+<% end %>
