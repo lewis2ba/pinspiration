@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(version: 20151113161903) do
   create_table "pins", force: :cascade do |t|
     t.string  "title"
     t.string  "image_url"
-    t.integer "user_id"
+    t.integer "board_id"
   end
 
   create_table "users", force: :cascade do |t|

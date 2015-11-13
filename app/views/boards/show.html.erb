@@ -2,3 +2,9 @@
 <%= link_to "(edit)", edit_board_path(@board) %>
 
 <%= link_to "Create Pin", new_board_pin_path(@board) %>
+
+<% @board.pins.each do |pin| %>
+  <%= pin.title %>
+  <%= link_to "(edit)", edit_board_pin_path(@board,pin) %>
+  <%= image_tag(pin.image_url) %>
+<% end %>

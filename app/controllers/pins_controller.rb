@@ -18,23 +18,24 @@ class PinsController < ApplicationController
   def create
     @board = Board.find( params[:board_id] )
     @pin = @board.pins.create(pin_params)
-    redirect_to boards_path
+    redirect_to board_path(@board)
   end
 
   def edit
     authenticate_user!
     @pin = Pin.find( params[:id] )
+    @board = Board.find( params[:board_id])
   end
 
   def update
     @pin = Pin.find( params[:id] )
     @pin.update!(pin_params)
-    redirect_to pin_path(@pin)
+    redirect_to board_path(params[:board_id])
   end
 
   def destroy
     Pin.find(params[:id]).destroy
-    redirect_to pins_path
+    redirect_to board_path(params[:board_id])
   end
 
   private
