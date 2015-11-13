@@ -1,2 +1,8 @@
-<h1><%= @pin.title %><%=link_to"(edit)", edit_pin_path(@pin) %></h1>
+<h1><%= @pin.title %><%=link_to"(edit)", edit_board_pin_path(@pin.board, @pin) %></h1>
 <%= image_tag(@pin.image_url) %>
+
+<%= link_to "Add Tag", new_pin_tag_path(@pin) %>
+
+<% @pin.taggings.each do |tag| %>
+  <%= tag.tag.name %>
+<% end %>

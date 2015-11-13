@@ -10,9 +10,9 @@
 <header>
   <nav>
     <a href="/boards">Boards</a>
-    <h1 class='title'>Pinspiration</h1>
+    <h1 class='title'><%= link_to Pinspiration, root_path %></h1>
+    <%= link_to "All Pins", pins_path %>
     <%= link_to "Create Board", new_board_path %>
-
     <% if current_user %>
       <%= link_to 'Signout', destroy_user_session_path, :method => :delete %>
     <% else %>
