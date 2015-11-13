@@ -1,4 +1,12 @@
+<h2>All Pins</h2>
 <% @pins.each do |pin| %>
 <%= link_to image_tag(pin.image_url), pin %>
 
+<% end %>
+
+<%if(current_user) %>
+  <h2>Your Pins</h2>
+  <% current_user.pins.each do |pin| %>
+  <%= link_to image_tag(pin.image_url), pin %>
+  <% end %>
 <% end %>

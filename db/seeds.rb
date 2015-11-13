@@ -6,6 +6,7 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
+
 pins = Pin.create([
   {title: "Pin 1", image_url: "http://www.fillmurray.com/200/300"},
   {title: "Pin 2", image_url: "http://www.fillmurray.com/200/301"},

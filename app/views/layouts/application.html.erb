@@ -10,7 +10,7 @@
 <header>
   <nav>
     <a href="/pins">Pins</a>
-    <%= link_to "Create new pin", new_pin_path %>
+  
     <% if current_user %>
       <h3><%= link_to 'Signout', destroy_user_session_path, :method => :delete %></h3>
     <% else %>

@@ -1,9 +1,12 @@
 class PinsController < ApplicationController
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+
   def index
     @pins = Pin.all
   end
 
   def new
+    authenticate_user!
     @pin = Pin.new
   end
 
@@ -12,11 +15,12 @@ class PinsController < ApplicationController
   end
 
   def create
-    @pin = Pin.create!(pin_params)
+    @pin = current_user.pins.create!(pin_params)
     redirect_to pin_path(@pin)
   end
 
   def edit
+    authenticate_user!
     @pin = Pin.find( params[:id] )
   end
 
