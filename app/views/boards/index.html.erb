@@ -1,7 +1,15 @@
-<h1>Boards</h1>
+<h2>Boards</h2>
+
+<% @boards.each do | board | %>
+  <li><%= link_to board.title, board %></li>
+<% end %>
+
+
 <%if(current_user) %>
   <h2>Your Boards</h2>
-  <% current_user.boards.each do |board| %>
-  <%= link_to board.title, board %>
-  <% end %>
+
+    <% current_user.boards.each do |board| %>
+    <li><%= link_to board.title, board %></li>
+    <% end %>
+
 <% end %>
