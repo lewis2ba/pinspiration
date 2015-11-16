@@ -1,0 +1,14 @@
+<h1><%= @board.title %></h1>
+
+<% if current_user == @board.user %>
+  <%= link_to "(edit)", edit_board_path(@board) %>
+  <%= link_to "Create Pin", new_board_pin_path(@board) %>
+<% end %>
+
+<% @board.pins.each do |pin| %>
+  <%= pin.title %>
+  <% if current_user == @board.user %>
+    <%= link_to "(edit)", edit_board_pin_path(@board,pin) %>
+  <% end %>
+  <%= link_to image_tag(pin.image_url), pin_path(pin) %>
+<% end %>
